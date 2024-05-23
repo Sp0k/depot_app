@@ -1,24 +1,79 @@
-# README
+# Depot
+Depot is an e-commerce application built with Ruby on Rails, following the guidelines and examples provided in the book *Agile Web Development with Rails 7* by Same Ruby with Dave Thomas.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Prerequisites
+- **Ruby**: 3.2.3
+- **Rails**: 7.1.3.3
+- **Database**: SQLite 3
 
-Things you may want to cover:
+## Getting Started
+To get started with the Depot App, follow these steps:
 
-* Ruby version
+1. **Clone the repository**
 
-* System dependencies
+```sh
+git clone https://github.com/Sp0k/depot_app.git depot
+cd depot
+```
 
-* Configuration
+2. **Install dependencies**
 
-* Database creation
+```sh
+bundle install
+```
 
-* Database initialization
+3. **Build the project and start the server**
 
-* How to run the test suite
+```sh
+bin/dev
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+\* The project is set up to use the port 3001 on my machine, however you can fix that by changing 3001 to 3000 in the file *Procfile.dev* if you'd rather use the default port:
 
-* Deployment instructions
+```dev
+web: bin/rails server -p 3000
+css: bin/rails tailwindcss:watch
+```
 
-* ...
+4. **Visit the application in your browser**
+
+Open your browser and navigate to `http://localhost:3001`. (or 3000 if you changed it)
+
+## Development
+### Running Tests
+To run the test suite, execute:
+
+```sh
+bin/rails test
+```
+
+### Code Style
+This project follows the Ruby style guide. To check the code style, run:
+
+```sh
+rubocop
+```
+
+## Deployment
+To deploy the application, follow these steps:
+1. **Set up the production database**
+
+```sh
+bin/rails db:setup RAILS_ENV=production
+```
+
+2. **Precompile assets**
+
+```sh
+bin/rails assets:precompile
+```
+
+3. **Start the server**
+
+Ensure you have a web server like Puma, Unicorn, or Passenger set up for production.
+
+## Contribution
+Bug reports and pull requests are welcome on GitHub at https://github.com/Sp0k/depot_app.git. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/).
+
+## License
+The gem is available as open source under the terms of the [MIT License](LICENSE).
